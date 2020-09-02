@@ -23,12 +23,14 @@ class Login extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    const { email, password } = this.state;
-    let _data = {
+    this.setState({ redirect: true });
+    /*  const { email, password } = this.state;
+    
+     let _data = {
       email: email,
       password: password,
     };
-    HttpClient({
+      HttpClient({
       url: `${window.base_url}/${window.login}`,
       method: "POST",
       data: _data,
@@ -41,7 +43,7 @@ class Login extends React.Component {
       })
       .catch((e) => {
         console.error("error:", e.message);
-      });
+      });   */
   };
   render() {
     if (this.state.redirect) {
